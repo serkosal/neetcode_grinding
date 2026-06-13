@@ -1,0 +1,7 @@
+# binaries
+*.exe
+*.out
+
+# python
+.venv
+__pycache__

@@ -30,12 +30,13 @@
 #include <unordered_map>
 #include <queue>
 #include <deque>
+#include <stack>
 
 using std::string, std::string_view,
     std::cout, std::cin, std::format, std::print, std::println, 
     std::array, std::vector,
     std::forward_list, std::list, std::initializer_list,
-    std::queue, std::priority_queue, std::deque,
+    std::stack, std::queue, std::priority_queue, std::deque,
     std::map, std::multimap,
     std::unordered_map, std::unordered_multimap,
     std::set, std::multiset, 

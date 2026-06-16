@@ -18,7 +18,7 @@ struct TreeNode {
     // TreeNode(int val = 0, TreeNode& left, TreeNode& right)
     // : val(val), left(&left), right(&right) {}
 
-    std::string to_str() const;
+    std::string to_str(int depth = 0) const;
 };
 
 std::ostream& operator<<(std::ostream& out, const TreeNode& node);

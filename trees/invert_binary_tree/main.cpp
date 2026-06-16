@@ -30,7 +30,7 @@ int main() {
     };
     invertTree(root);
 
-    cout << *root;
+    cout << *root << "\n";
 
     return 0;
 }

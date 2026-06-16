@@ -12,6 +12,7 @@
                 "${workspaceFolder}",
                 "-g",
                 "${workspaceFolder}/cpp_helpers/listNode.cpp",
+                "${workspaceFolder}/cpp_helpers/treeNode.cpp",
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.out"

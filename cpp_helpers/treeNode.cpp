@@ -12,21 +12,34 @@ string TreeNode::to_str(int depth) const {
 
     const string TAB_SYMBOL = "  ";
 
-    const string
-        val_str =  to_string(this->val),
-        left_str  = (left ?  '\n' + left->to_str(depth + 1) + '\n' : "null\n"),
-        right_str = (right ? '\n' + right->to_str(depth + 1) + '\n': "null\n");
-
     string tabs;
     for (int i = 0; i < depth; ++i) 
         tabs += TAB_SYMBOL;
+    const string extra_tabs = tabs + TAB_SYMBOL;
 
-    return tabs + 
-    "{\n" +
-        tabs + TAB_SYMBOL + "\"type\": "   + "\"Tree node\"\n"  + 
-        tabs + TAB_SYMBOL + "\"value\": "  + val_str         +  '\n' +
-        tabs + TAB_SYMBOL + "\"left\": "   + left_str  +
-        tabs + TAB_SYMBOL + "\"right\": "  + right_str + 
-        tabs + 
-    "}";
+    const string
+        type_str = (depth == 0
+            ? format("{}\"type\": \"Tree node\",\n", extra_tabs)
+            : ""
+        ),
+        val_str = format("{}\"value\": {}", extra_tabs, to_string(this->val)),
+        left_str  = (left 
+            ? format(",\n{}\"left\": {}", extra_tabs, left->to_str(depth + 1)) 
+            : ""
+        ),
+        right_str = (right 
+            ? format(",\n{}\"right\": {}", extra_tabs, right->to_str(depth + 1))
+            : ""
+        );
+   
+    return format(
+        "{{\n" 
+            "{1}"
+            "{2}"
+            "{3}"
+            "{4}"
+        "\n{0}}}",
+        tabs,
+        type_str, val_str, left_str, right_str
+    );
 }

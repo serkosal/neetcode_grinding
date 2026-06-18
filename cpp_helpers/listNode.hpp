@@ -16,6 +16,8 @@ struct ListNode {
     ListNode(int x = 0, ListNode* next = nullptr) : val(x), next(next) {}
 
     static ListNode* make_list(initializer_list<int> l);
+
+    string to_str();
     
     struct BaseIterator {
         using iterator_category = std::forward_iterator_tag;
@@ -87,8 +89,6 @@ struct ListNode {
     ConstIterator cend  () const noexcept { return ConstIterator(nullptr); }
 };
 static_assert(std::ranges::range<ListNode>);
-
-std::ostream& operator<<(std::ostream& out, const ListNode& listNode );
 
 
 #endif 

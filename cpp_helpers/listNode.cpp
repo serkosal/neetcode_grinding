@@ -18,6 +18,9 @@ ListNode* ListNode::make_list(initializer_list<int> l) {
     return result;
 }
 
-ostream& operator<<(ostream& out, const ListNode& listNode ) {
-    return out << "{type: ListNode, val: " << listNode.val << "}"; 
+string ListNode::to_str() {
+    return format(
+        "{}{}", this->val,
+        this->next ? " -> " + this->next->to_str() : ""
+    );
 }
